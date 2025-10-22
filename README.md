@@ -1,0 +1,71 @@
+agentic_py
+==========
+
+``agentic_py`` is a reference implementation of a modern Python 3.11 project
+that demonstrates how to structure code, documentation, and tooling when
+building agent-focused workflows. The repository highlights an opinionated
+setup featuring Poetry for dependency management, Pydantic for validation,
+pytest for testing, and Sphinx for documentation.
+
+Project Structure
+-----------------
+
+(The src/ and tests/ does nothing actually)
+
+```
+agentic_py/
+├── src/agentic_py/          # Application package
+│   ├── core/                # Core functionality (registries, coordination)
+│   ├── models/              # Pydantic models and schemas
+│   ├── services/            # Business orchestration logic
+│   └── utils/               # Shared helpers
+├── tests/                   # Pytest suites
+│   ├── unit/                # Unit-level checks
+│   └── integration/         # End-to-end style tests
+├── docs/                    # Sphinx documentation source
+├── scripts/                 # Project automation scripts
+├── .github/workflows/       # CI configuration
+├── pyproject.toml           # Poetry project definition
+└── README.md
+```
+
+Quick Start
+-----------
+
+```bash
+poetry install
+poetry run pre-commit install
+poetry run pytest
+poetry run sphinx-build docs/source docs/build
+```
+
+Tooling Overview
+----------------
+
+- **Type checking:** ``mypy``
+- **Linting:** ``ruff`` and ``pylint``
+- **Formatting:** ``ruff format`` and ``pydocstringformatter``
+- **Testing:** ``pytest`` with ``coverage`` and ``tox`` for automation
+- **Docs:** ``sphinx`` for API and narrative documentation
+
+Environment Variables
+---------------------
+
+Copy ``.env.example`` to ``.env`` and adjust fields as needed:
+
+```bash
+cp .env.example .env
+```
+
+Development Workflow
+--------------------
+
+1. Branch from ``develop`` using ``feature/*`` or ``bugfix/*`` naming.
+2. Implement changes with comprehensive tests and documentation updates.
+3. Run ``scripts/run_quality_checks.sh`` prior to committing.
+4. Ensure CI (lint, type check, tests, docs) reports success before merging.
+
+License
+-------
+
+Released under the MIT License. See ``LICENSE`` for details.
