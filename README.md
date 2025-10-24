@@ -10,7 +10,7 @@ pytest for testing, and Sphinx for documentation.
 Project Structure
 -----------------
 
-(The src/ and tests/ does nothing actually)
+The src/ and tests/ does nothing actually
 
 ```
 agentic_py/
@@ -42,11 +42,24 @@ poetry run sphinx-build docs/source docs/build
 Tooling Overview
 ----------------
 
-- **Type checking:** ``mypy``
-- **Linting:** ``ruff`` and ``pylint``
-- **Formatting:** ``ruff format`` and ``pydocstringformatter``
-- **Testing:** ``pytest`` with ``coverage`` and ``tox`` for automation
-- **Docs:** ``sphinx`` for API and narrative documentation
+# Type checking
+  * `mypy .` or `mypy {some_module}`
+  - [ ]  `mypy.ini` included for configuration
+# Linting
+  * `ruff check` , `ruff check --fix`
+  * `pylint . --output-format=colorized`
+# Formatting
+  - **Formatting:** ``ruff format`` and ``pydocstringformatter``
+  * `ruff format` or dry run `ruff format --diff`
+  * `pydocstringformatter -r .` or dry run `pydocstringformatter -r . --check`
+# Testing
+  * pytest .
+  * coverage -m pytest .
+  * coverage report -m
+  * tox -e py311
+# Docs
+  Not really working well, need more thoughts and consultation
+  * `sphinx-build -b html docs/source docs/build`
 
 Environment Variables
 ---------------------
