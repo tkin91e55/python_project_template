@@ -33,8 +33,11 @@ jobs:
             - name: Run mypy
               run: poetry run mypy src
 
+            #             - name: Run pytest with coverage
+            #               run: poetry run pytest --cov=agentic_py --cov-report=xml
+
             - name: Run pytest with coverage
-              run: poetry run pytest --cov=agentic_py --cov-report=xml
+              run: poetry run pytest
 
             - name: Build documentation
               run: poetry run sphinx-build docs/source docs/build

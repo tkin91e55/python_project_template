@@ -5,6 +5,8 @@ AGENTS — Repository Agent Guidelines
   This is a simple python project that does nothing. It scaffolds with linters, type checkers, and
   formatters pre-configured. Design a dummy sizeable python project with proper structure.
 
+  It use poetry as dependency manager
+
 # Tech stack
 
   This project use Python 3.11 and poetry for dependency management.
@@ -191,4 +193,3 @@ All commands are configured to run in CI/CD pipeline. Ensure all checks pass bef
 - Keep changes minimal and focused; add tests when changing behavior
 - Require status checks to pass before merging
 - Protect `main` and `develop` branches from force pushes
-
