@@ -7,6 +7,9 @@ building agent-focused workflows. The repository highlights an opinionated
 setup featuring Poetry for dependency management, Pydantic for validation,
 pytest for testing, and Sphinx for documentation.
 
+This project template serves similar purpose to cookiecutter, but less complexity.
+Aim good enough for bootstrapping new projects.
+
 Project Structure
 -----------------
 
